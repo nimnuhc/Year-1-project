@@ -1,0 +1,507 @@
+\documentclass[landscape,final,a0paper]{baposter}
+
+
+\tracingstats=2
+
+\usepackage{url}
+\usepackage{calc}
+\usepackage{graphicx}
+\usepackage[numbers]{natbib}
+\usepackage{amsmath, amsthm}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{pifont}
+\usepackage{relsize}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usepackage{multirow}
+\usepackage{bm}
+\usepackage[most]{tcolorbox}
+\usepackage{graphicx}
+\usepackage{multicol}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
+\newtheorem{lemma}{Lemma}
+\newtheorem{definition}{Definition}
+\newtheorem{proposition}{Proposition}
+\usepackage{pgfbaselayers}
+\pgfdeclarelayer{background}
+\pgfdeclarelayer{foreground}
+\pgfsetlayers{background,main,foreground}
+\usepackage{titlesec}
+\titleformat{\section}
+  {\normalfont\fontsize{10}{8}\bfseries}{\thesection}{1em}{} %changes font size of section
+\usepackage{times}
+\usepackage{helvet}
+\usepackage{palatino}
+\usepackage{caption}
+%\newtcolorbox{Definition}{
+%colback=green!30!gray!15,
+%sharp corners
+%}
+\newtcolorbox{Definition}{
+breakable,
+enhanced,
+boxrule=0pt,frame hidden,
+borderline west={2pt}{0pt}{green!50!black},
+colback=green!30!gray!15,
+sharp corners,
+top = 0.2pt, 
+left = 0.2pt, 
+bottom = 0.2pt,
+right = 0pt
+}
+\graphicspath{{"/Users/cm/Documents/LaTeX/images/"}}
+\selectcolormodel{cmyk}
+
+%\graphicspath{{images/}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Some math symbols used in the text
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Format 
+
+\renewcommand{\Pr}{\mbox{P}}
+\newcommand{\e}{\mbox{e}}
+\newcommand{\dx}{\,\mbox{d}x}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Multicol Settings
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength{\columnsep}{0.7em}
+\setlength{\columnseprule}{0mm}
+\setlength{\bibsep}{0pt plus 0.3ex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Save space in lists. Use this after the opening of the list
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\compresslist}{%
+\setlength{\itemsep}{1pt}%
+\setlength{\parskip}{0pt}%
+\setlength{\parsep}{0pt}%
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Begin of Document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Here starts the poster
+%%%---------------------------------------------------------------------------
+%%% Format it to your taste with the options
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Define some colors
+\definecolor{silver}{cmyk}{0,0,0,0.3}
+\definecolor{yellow}{cmyk}{0,0,0.9,0.0}
+\definecolor{reddishyellow}{cmyk}{0,0.22,1.0,0.0}
+\definecolor{black}{cmyk}{0,0,0.0,1.0}
+\definecolor{darkYellow}{cmyk}{0,0,1.0,0.5}
+\definecolor{darkSilver}{cmyk}{0,0,0,0.1}
+\definecolor{lightyellow}{cmyk}{0,0,0.3,0.0}
+\definecolor{lighteryellow}{cmyk}{0,0,0.1,0.0}
+\definecolor{lighteryellow}{cmyk}{0,0,0.1,0.0}
+\definecolor{lightestyellow}{cmyk}{0,0,0.05,0.0}
+\definecolor{cyan}{cmyk}{1,0,0,0}
+\definecolor{lightcyan}{cmyk}{0.5,0,0,0}
+\definecolor{pastelcyan}{cmyk}{0.25,0,0,0}
+\definecolor{magenta}{cmyk}{0,1,0,0}
+\definecolor{yellow}{cmyk}{0,0,1,0}
+\definecolor{lightyellow}{cmyk}{0,0,0.5,0}
+\definecolor{pastelyellow}{cmyk}{0,0,0.25,0}
+\definecolor{black}{cmyk}{0,0,0,1}
+\definecolor{darkgray}{cmyk}{0,0,0,0.75}
+\definecolor{gray}{cmyk}{0,0,0,0.5}
+\definecolor{lightgray}{cmyk}{0,0,0,0.25}
+\definecolor{white}{cmyk}{0,0,0,0}
+\definecolor{red}{cmyk}{0,1,1,0}
+\definecolor{pastelred}{cmyk}{0,0.25,0,0}
+\definecolor{orange}{cmyk}{0,0.5,1,0}
+\definecolor{scarlet}{cmyk}{0,1,0.5,0}
+\definecolor{brown}{cmyk}{0.5,0.75,1,0}
+\definecolor{camel}{cmyk}{0.25,0.375,0.5,0}
+\definecolor{cream}{cmyk}{0,0.2,0.3,0}
+\definecolor{green}{cmyk}{1,0,1,0}
+\definecolor{lightgreen}{cmyk}{0.5,0,0.5,0}
+\definecolor{pastelgreen}{cmyk}{0.25,0,0.25,0}
+\definecolor{mossgreen}{cmyk}{0.64,0.4,1,0}
+\definecolor{yellowgreen}{cmyk}{0.5,0,1,0}
+\definecolor{skyblue}{cmyk}{0.6,0.16,0,0}
+\definecolor{royal}{cmyk}{1.0,0.5,0,0}
+\definecolor{navyblue}{cmyk}{0.9,0.75,0.5,0}
+\definecolor{lightnavy}{cmyk}{0.4,0.3,0.2,0}
+%\definecolor{myblue}{cmyk}{0.82,0.67,0,0}
+%\definecolor{myblue}{cmyk}{1,0,0.2,0.6}
+%\definecolor{myblue}{cmyk}{1,0.3,0.2,0}
+%\definecolor{myblue}{cmyk}{1,0,0.2,0}
+%\definecolor{myblue}{cmyk}{0.55,0.25,0,0}
+%\definecolor{myblue}{cmyk}{0,0,0,1}
+%\definecolor{myblue}{cmyk}{1,0.61,0,0.45}
+\definecolor{myblue}{cmyk}{1,1,0,0}
+\definecolor{lightblue}{cmyk}{0.5,0.5,0,0}
+\definecolor{pastelblue}{cmyk}{0.25,0.25,0,0}
+\definecolor{lightpastelblue}{cmyk}{0.15,0.15,0,0}
+\definecolor{lightestpastelblue}{cmyk}{0.05,0.05,0,0}
+\definecolor{lavender}{cmyk}{0.25,0.25,0,0}
+\definecolor{violet}{cmyk}{0.75,1,0.25,0}
+\definecolor{purple}{cmyk}{0.5,1,0.5,0}
+\definecolor{lightpurple}{cmyk}{0.25,0.5,0.25,0}
+\definecolor{pink}{cmyk}{0,0.5,0,0}
+\definecolor{peipei}{cmyk}{27,2,0,0}
+
+%%
+
+\typeout{Poster Starts}
+%\background{
+  %\begin{tikzpicture}[remember picture,overlay]%
+  %  \draw (current page.north west)+(-2em,-2em) node[anchor=north west] %{\hspace{-2em}\includegraphics[height=1.1\textheight]{silhouettes_background}};
+ % \end{tikzpicture}%
+%}
+
+
+
+
+\newlength{\leftimgwidth}
+\begin{poster}%
+  % Poster Options, such as colours etc
+  {
+  % Show grid to help with alignment
+  grid=false,
+ % Column spacing
+  colspacing=0.5em,
+ % Color style
+ % bgColorOne=pastelblue,
+ %bgColorTwo=lightpastelblue,
+  bgColorOne=white,
+  bgColorTwo=white,
+  borderColor=black,
+  headerColorOne=pastelblue,
+  headerColorTwo=red,
+  headerFontColor=black,
+ % boxColorOne=lightpastelblue,
+ % boxColorTwo=lightestpastelblue,
+ boxColorOne=white,
+ boxColorTwo=white,
+ % Format of textbox
+  textborder=roundedleft,
+% textborder=rectangle,
+% Format of text header
+  eyecatcher=true,
+  headerborder=open,
+  headerheight=0.08\textheight,
+  headershape=roundedright,
+  headershade=plain,
+  headerfont=\large, %Sans Serif
+  boxshade=plain,
+%  background=shade-tb,
+ % background=plain,
+  background=none,
+  linewidth=1pt
+  }
+  % Eye Catcher
+  {\includegraphics[width=6em, height = 6em]{CryptographyQR.png}} % select eyecatcher=false above if not required. If no eye catcher is present, the title is left aligned.
+  % Title
+  { %Sans Serif
+  %\bf% Serif
+  Cracking the Elliptic Curve Cryptosystem} 
+  % Authors
+  { %Sans Serif
+  % Serif
+  \vspace{0.5em} 
+  Chun Min Tan (CID: 02016068) \\ 
+  \url{cmt122@ic.ac.uk}
+  }
+  % University logo
+  { % The makebox allows the title to flow into the logo
+    \makebox[8em][r]{%
+        \begin{minipage}{16em}
+				\hfill \includegraphics[height=5.3em]{imperial.png}
+				\end{minipage}
+    }
+  }
+
+  \tikzstyle{light shaded}=[top color=baposterBGtwo!30!white,bottom color=baposterBGone!30!white,shading=axis,shading angle=30]
+
+  % Width of left inset image
+     \setlength{\leftimgwidth}{0.78em+8.0em}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Now define the boxes that make up the poster
+%%%---------------------------------------------------------------------------
+%%% Each box has a name and can be placed absolutely or relatively.
+%%% The only inconvenience is that you can only specify a relative position 
+%%% towards an already declared box. So if you have a box attached to the 
+%%% bottom, one to the top and a third one which should be in between, you 
+%%% have to specify the top and bottom boxes before you specify the middle 
+%%% box.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    %
+    % A coloured circle useful as a bullet with an adjustably strong filling
+\newcommand{\colouredcircle}[1]{%
+      \tikz{\useasboundingbox (-0.2em,-0.32em) rectangle(0.2em,0.32em); \draw[draw=black,fill=baposterBGone!80!black!#1!white,line width=0.03em] (0,0) circle(0.18em);}}
+\small
+\setlength{\belowdisplayskip}{0pt} \setlength{\belowdisplayshortskip}{0pt}
+\setlength{\abovedisplayskip}{0pt} \setlength{\abovedisplayshortskip}{0pt}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+  \headerbox{Introduction to Elliptic Curve}{name=intro,column=0,row=0}{
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \begin{Definition}
+        \begin{definition}
+    \textbf{(Elliptic Curve)} An elliptic curve $ {\color{myblue}{E}} $ is the set of solutions to a Weierstrass equation
+    $$  {\color{myblue}{E : y^2 = x^3 + a x +b}}  $$
+     with point $ {\color{myblue}{\mathcal{O}}} $ and $ {\color{myblue}{a,b}} $ satisfying $ {\color{myblue}{4a^3 + 27b^2 \neq 0}}  $
+        \end{definition}
+        \end{Definition}
+    \vspace{-0.5em}
+   \textbf{Elliptic Curve Addition Algorithm}  \\
+    \vspace{-0.5em}
+    \begin{minipage}[c]{5cm}
+       Let $ {\color{myblue}{E}} $  be an elliptic curve, and suppose ${\color{myblue}{P, Q}}$ are points on $ {\color{myblue}{E}} $. Define $ {\color{myblue}{P \oplus Q = R'}}  $, as in the figure \cite[p.281]{hoffstein2008introduction}\label{e_add}.
+    \end{minipage}%
+    \begin{minipage}[c]{6cm}
+    \includegraphics[width=0.5\textwidth, height = 0.33\textwidth]{elliptic addition.jpg}
+    \end{minipage}  
+    
+    In cryptography we use elliptic curve over a finite field 
+    $$ {\color{myblue}{E(\mathbb{F}_p) = \{(x,y) : x, y \in \mathbb{F}_p \land (x,y)\in E\} \cup \{\mathcal{O}\}}} $$
+ }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \headerbox{Elliptic Curve Cryptography}{name=ECC,column=0,below=intro}{
+  \begin{minipage}[c]{3cm}
+  Some notable elliptic curve cryptosystems are Diffie-Hellman key exchange and ElGamal public key, etc. A summary of Diffie-Hellman key exhcange \cite[p.297]{hoffstein2008introduction} 
+  \end{minipage}%
+  \begin{minipage}[c]{6.1cm}
+    \includegraphics[width=0.8\textwidth, height = 0.6 \textwidth]{diffie-hellman-elliptic}
+  \end{minipage}
+  Note that if one can solve $ {\color{myblue}{Q_A = n_A P}} $ or $ {\color{myblue}{Q_B = n_B P}} $, then one is able to crack the cipher, i.e. the elliptic curve discrete logarithm problem (ECDLP). 
+  }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \headerbox{Double-and-Add Algorithm}{name=DoubleAdd,column=0,below=ECC}{
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{enumerate}[noitemsep,nolistsep, leftmargin = *]
+    \item We write $ {\color{myblue}{n}} $ in binary form as 
+    $$ {\color{myblue}{n = n_0 + n_1 \cdot 2 + n_2 \cdot 2^2 + \cdots n_r \cdot 2^r\qquad n_i \in \{0,1\}}}  $$ 
+    \item Compute ${\color{myblue}{Q_i = 2 Q_{i-1}=  2^i P}}  $ for $ {\color{myblue}{i\geq 0}}  $. 
+    Then 
+    \vspace{0.3em}
+    \begin{align*}
+    {\color{myblue}{nP = n_0 Q_0 + n_1 Q_1 + \cdots + n_r Q_r \qquad n_i \in \{0,1\}}} 
+    \end{align*}
+    \vspace{-0.9em}
+\end{enumerate} 
+$ {\color{myblue}{r = \left\lfloor \log_2 n  \right\rfloor \leq \log_2 n}}  $, $ \therefore $ at most $ {\color{myblue}{\boxed{2 \log_2 n }}} $ steps and on average it takes $ {\color{myblue}{\boxed{3 /2 \log_2 n }}} $. \\
+  \textbf{Improvements}: We allow coefficients $ {\color{myblue}{n_i \in \{-1, 0 ,1\}}} $ and an extra digit in the expansion.
+    \vspace{-0.5em}
+    \begin{tcolorbox}[breakable, top  = 0pt, left = 0pt, right= 0pt, bottom =0pt, boxrule = 1pt]
+    \begin{proposition}
+      For all $ n\in \mathbb{N} $, there exists a ternary expansion where at most half of the coefficients are nonzero. 
+    \end{proposition}
+    \end{tcolorbox}
+    \vspace{-6pt}
+    \begin{tcolorbox}[breakable,colback=blue!5!white, colframe=blue!50!black, top=0pt, left=0pt,right=0pt, bottom = 0pt, boxrule = 1pt]
+    \begin{proof}
+    We look for the first two or more consecutive nonzero $ u_i $ in binary expansion. Suppose we have 
+    \vspace{0.3em}
+    \begin{align*}
+      {\color{myblue}{u_s = u_{s+1} = \cdots = u_{s+t-1} = 1\quad \text{and} \quad u_{s+t} = 0}} 
+    \end{align*}
+    \vspace{-0.9em}
+
+    where $ {\color{myblue}{t \geq 2}} $. Then we have 
+    \vspace{0.5em}
+    {\color{myblue}{\begin{align*}
+         2^s + 2^{s+1}  + & \cdots +2^{s+t-1}+ 0\cdot 2^{s+t} =  -2^s + 2^{s+t} 
+    \end{align*}}}
+    \end{proof}
+    \end{tcolorbox}
+    \vspace{-0.5em}
+    There are at most $ {\color{myblue}{\left\lfloor \log_2 n  \right\rfloor  +1}} $ doublings and at most $ {\color{myblue}{\left\lfloor (\left\lfloor \log_2 n  \right\rfloor  + 1 ) / 2 \right\rfloor + 1}}   $ additions, added together gives $ {\color{myblue}{\boxed{3 / 2 \log_2 n + 5/2}}} $ and on average it takes $ {\color{myblue}{\boxed{4 /3 \log_2 n + 7 /3}}} $.
+  }  
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \headerbox{Naive Collision Algorithm}{name=naive,column=1,span=2, row=0, headerColorOne = pastelgreen}{
+    \vspace{-0.6em}
+    \begin{tcolorbox}[top = 0pt, left=0pt, right = 0pt, bottom = 0pt, boxrule = 1pt]
+    \begin{theorem}
+    \textbf{(Collision Theorem)} An urn contains $ {\color{myblue}{N}} $ balls, $ {\color{myblue}{n}} $ are red, $ {\color{myblue}{N-n}} $ are blue. Bob chooses $ {\color{myblue}{m}} $ balls with replacement, then if $ {\color{myblue}{X}} $ is the number of red ball observe, we have 
+    $ {\color{myblue}{P(X \geq 1 ) \geq 1- e^{- mn / N }}} $
+    \end{theorem}
+    \end{tcolorbox}
+    \vspace{-6pt}
+    \begin{tcolorbox}[breakable,colback=blue!5!white, colframe=blue!50!black, top = 0pt, bottom = 0pt, right = 0pt, left = 0pt, boxrule = 1pt]
+    \textit{Proof.} 
+   Note that $ {\color{myblue}{P(X \geq 1) = 1 - P(X= 0)}} $, note that 
+   $ {\color{myblue}{P(X = 0 ) = \left((N-n) / m \right)^m = \left(1- n / N \right)^m \leq  e^{- mn / N}}}  \qquad \square$  
+   \vspace{-0.2em}
+    \end{tcolorbox}
+    \vspace{-0.5em}
+    \begin{enumerate}[noitemsep,nolistsep, leftmargin = *]
+        \item If $ {\color{myblue}{N = \text{ord}(P)}} $, choose $ {\color{myblue}{r \approx 3 \sqrt{N}}} $. We randomly choose $ {\color{myblue}{1 \leq y_1 , \dots, y_r \leq N}} $ and compute 
+        \vspace{0.4em}
+        \begin{align*}
+        {\color{myblue}{y_1 P , y_2 P , \dots, y_rP \in \langle P \rangle \subseteq E(\mathbb{F}_p) \qquad \text{in at most } 2r \log_2 N \text{ steps}}} 
+        \end{align*}
+        \vspace{-0.6em}
+
+        \item We randomly select $ {\color{myblue}{1 \leq z_1 , \dots, z_r \leq N}}  $ and compute 
+        \vspace{0.4em}
+        \begin{align*}
+          {\color{myblue}{z_1 P + Q, z_2 P+ Q, \dots, z_rP +Q \in \langle P \rangle \subseteq E(\mathbb{F}_p) \qquad \text{in at most } 2r\log_2 N + r \text{ steps }}}
+        \end{align*}
+        \vspace{-0.6em}
+
+        \item Search for a collision, $ {\color{myblue}{ y_\alpha P = z_\beta P  + Q \implies Q = (y_\alpha - z_\beta)P}} $, hence the solution is $ {\color{myblue}{y_\alpha - z_\beta \pmod N}}  $. Merge sort plus binary search combined requires on average $ {\color{myblue}{2r\log_2 r}} $ steps. 
+    \end{enumerate}
+   \textbf{How likely is a collision?}  Treat $ {\color{myblue}{\langle P \rangle}} $ as the urn, $ {\color{myblue}{y_i}} $ as the red balls. Pick $ {\color{myblue}{r}} $ balls $ {\color{myblue}{(z_i P + Q)}} $, then by Collision theorem
+        \vspace{0.4em}
+   $$ {\color{myblue}{P(\text{at least one collision}) = 1 - \left(1 - r / N\right)^r \geq 1 - e^{-r^2 /N} \approx 1 - e^{-9} \approx 99.98\%}}$$
+   with total number of steps 
+   $ {\color{myblue}{2r \log_2 N + 2r \log_2 N + r +2r \log_2 r = 3 \sqrt{N} \log_2 (N^4 \cdot 9N) + 3 \sqrt{N} = \boxed{\footnotesize O(\sqrt{N}\log N)}}}$
+    \vspace{-0.2em}
+  \begin{tcolorbox}[colback = skyblue, boxrule = 0pt, top = 0pt, bottom =0 pt, right= 0 pt, left = 0pt, sharp corners, opacityfill= 0.1]
+  \textbf{\textit{Key Idea}}: Generate $ {\color{myblue}{2}} $ lists $ {\color{myblue}{y_iP}}  $ and $ {\color{myblue}{z_iP +Q}} $ by randomly selecting $ {\color{myblue}{y_i}} $ and $ {\color{myblue}{z_i}} $ from $ {\color{myblue}{[1 ,  N]}} $ and search for a collision. 
+  \end{tcolorbox}
+  \vspace{-0.5em}
+ }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\headerbox{Pollard's $ \rho $ method for $ ord(P) = p $ prime}{name=rho,column=1,span=2, below = naive, headerColorOne = pastelgreen}{
+  \vspace{-0.6em}
+  \begin{tcolorbox}[top = 0pt, left=0pt, right = 0pt, bottom = 0pt, boxrule = 1pt]
+  \begin{theorem}
+  Set $ {\color{myblue}{|S| = p}} $, $ {\color{myblue}{f : S \to S}} $ is sufficiently random, if $ {\color{myblue}{(x_i)}} $ is generated by applying $ {\color{myblue}{f}} $, then $ {\color{myblue}{\text{E}(T+M)  = \sqrt{ \pi p / 2}}}$.
+  \end{theorem}
+  \end{tcolorbox}
+    \vspace{-0.4em}
+  \begin{minipage}[c]{12.5cm}
+    %\vspace{-2.6em}
+  \begin{tcolorbox}[breakable,colback=blue!5!white, colframe=blue!50!black, top = 0pt, left=0pt, right = 0pt, bottom = 0pt, boxrule = 1pt]
+  \begin{proof}
+ \footnotesize One can show that for large $ {\color{myblue}{p}} $ and $ {\color{myblue}{T,M}} $ as in the figure provided \cite[p.235]{hoffstein2008introduction}
+\vspace{-1em}
+ $$ {\footnotesize{{\color{myblue}{P( \substack{x_0 , x_1 , \dots, x_{k-1} \\ \text{are all different}}) = \prod\limits_{i = 1}^{k-1} P (\substack{x_i \neq x_j \text{for} \\ \text{all } 0\leq j < i} | \substack{x_0 ,x_1 ,\dots, x_{i-1} \\ \text{are all different}}) = \prod\limits_{i = 1}^{k-1} (1 - i / p) \approx e^{- k^2 / 2p}}}} \vspace{-5em}}  $$ 
+ \vspace{-1em}
+
+ then $ {\color{myblue}{E(T+M) = \sum\limits_{k =1 }^{\infty} k P(x_k\text{ is first match})\approx \sum\limits_{k =1}^{\infty} (k^2 / p ) e^{- k^2 / 2p} = \sqrt{\pi p / 2}}}   $
+  \end{proof}
+  \end{tcolorbox}
+  \end{minipage}%
+  \begin{minipage}[c]{4cm}
+    \vskip -1.5em
+\begin{figure}[H]
+    \includegraphics[width=1\textwidth, height = 0.5\textwidth]{rho_method1.jpeg}
+\end{figure}
+  \end{minipage}
+  \begin{enumerate}[noitemsep,nolistsep, leftmargin = *]
+    \item Let $ {\color{myblue}{\{S_1 , \dots, S_L\}}} $ be a partition of $ {\color{myblue}{\langle P \rangle}} $. Now define $ {\color{myblue}{H(X) =  j}}  $  if $ {\color{myblue}{X \in S_j}}  $ and let $ {\color{myblue}{a_j, b_j \in_R [0,p-1]}}$ for each $ {\color{myblue}{1 \leq j \leq L}}  $. Then define 
+    \vspace{-2em}
+    \small
+    {\color{myblue}{\begin{align*}
+        f &: \langle P \rangle \to \langle P \rangle \\ 
+            &\quad  X \mapsto X + a_j P + b_j Q \qquad \text{where } j = H(X)
+    \end{align*}}}
+    \vspace{-2em}
+    \item Since $ {\color{myblue}{\langle P \rangle}} $ is finite, by \textbf{\textit{Floyd's cycle-detection algorithm}}, compute $ {\color{myblue}{(X_i, X_{2i})}} $ until $ {\color{myblue}{X_i = X_{2i}}} $, where $ {\color{myblue}{X_i = f(X_{i-1})}} $. 
+  \end{enumerate}
+  \textbf{How fast is this algorithm?} Since $ {\color{myblue}{\text{E}(T+M) = \sqrt{p \pi / 2}}} $, and in each evaluation of the function $ {\color{myblue}{f}} $, it only requires $ {\color{myblue}{2}} $ modular addition, hence it takes approximately $ {\color{myblue}{2 \cdot \sqrt{p \pi / 2}}} $ steps, therefore $ {\color{myblue}{\footnotesize\boxed{O(\sqrt{p \pi /2})}}} $ or $ {\color{myblue}{\boxed{O(\sqrt{p})}}} $ . 
+  \vspace{-0.2em}
+  \begin{tcolorbox}[colback = skyblue, boxrule = 0pt, top = 0pt, bottom =0 pt, right= 0 pt, left = 0pt, sharp corners, opacityfill= 0.1]
+  \textbf{\textit{Key Idea}}: Construct $ {\color{myblue}{f}} $ to be sufficiently random, then compute $ {\color{myblue}{(X_i, X_{2i})}} $ until $ {\color{myblue}{X_i = X_{2i}}} $ where $ {\color{myblue}{X_i = f(X_{i-1})}} $. 
+  \end{tcolorbox}
+  \vspace{-0.5em}
+  }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\headerbox{Pohlig-Hellman Algorithm}{name=PH,column=1, span = 2, below = rho, headerColorOne = pastelgreen}{
+  Let $ {\color{myblue}{N = \text{ord}(P)}}  {\color{myblue}{ = p_1 ^{e_1 } p_2 ^{e_2 } \cdots p_r^{e_r}}} $ be given. To solve $ {\color{myblue}{\tilde{n} : Q = \tilde{n} P}} $, consider $ {\color{myblue}{\tilde{n} \equiv n_i \pmod {p_i^{e_i}}}} $ for each $ {\color{myblue}{1 \leq i \leq r}} $. 
+  \begin{enumerate}[noitemsep,nolistsep, leftmargin = *]
+    \item To find $ {\color{myblue}{n_i \pmod {p_i^{e_i}}}} $, we write it in its $ {\color{myblue}{p_i}} $-adic expansion modulo $ {\color{myblue}{p_i^{e_i}}} $. This will give 
+    \vspace{0.3em}
+    \begin{align*}
+      {\color{myblue}{n_i \equiv z_0 + z_1 p_i + \cdots + z_{e_i - 1}p_i^{e_i -1 } \pmod{p_i^{e_i}}  \qquad \text{ where } z_i \in [0,p_i -1 ]}}
+    \end{align*}
+    \vspace{-0.9em}
+    \item Define $ {\color{myblue}{P_0 = (N / p_i ) P}} $ and $ {\color{myblue}{Q_0 = (N / p _ i) Q}} $, since $ {\color{myblue}{P_0}}  $ has order $ {\color{myblue}{p_i}} $, we have 
+    \vspace{0.3em}
+    \begin{align*}
+      {\color{myblue}{Q_0 = (N / p_i)  Q = (N/p_i) \tilde{n } P = \tilde{n} ( N / p_i \cdot  P) = \tilde{n} P_0  = [\tilde{n}]_{p_i} P_0 = z_0 P_0}}   
+    \end{align*}
+    \vspace{-0.9em} 
+
+    therefore $ {\color{myblue}{z_0 = \log_{P_0 } Q_0}}  $ which can be solved using Pollard's $ {\color{myblue}{\rho}} $ method. 
+    \item If $ {\color{myblue}{z_0 , \dots, z_{t-1}}} $ have been computed, then $ {\color{myblue}{z_t = \log_{P_0 } Q_t}} $  can be computed using Pollard's $ {\color{myblue}{\rho}} $ method as well where 
+    $$ {\color{myblue}{Q_t = \frac{N}{p_i^{t+ 1}} (Q - z_0 P - z_1 p_i P  - \cdots - z_{t-1}p_i^{t-1})}} $$
+    \item This allow us to compute $ {\color{myblue}{z_0 , \dots, z_{e_i -1}}} $. Repeat for all $ {\color{myblue}{n_j}}  $, then $ {\color{myblue}{\tilde{n}}} $ can be found using \textbf{\textit{Chinese Remainder Theorem}}. 
+  \end{enumerate}
+ \textbf{How fast is this algorithm?} Given $ {\color{myblue}{N = p_1 ^{e_1 } p_2 ^{e_2 } \cdots p_r^{e_r}}}   $, then Pohlig-Hellman Algorithm takes $ {\color{myblue}{\scriptsize\boxed{ O \left(\sum_{i=1}^{r } e_i (\log n + \sqrt{p_i})\right)}}} $ 
+  \begin{tcolorbox}[colback = skyblue, boxrule = 0pt, top = 0pt, bottom =0 pt, right= 0 pt, left = 0pt, sharp corners, opacityfill= 0.1]
+  \textbf{\textit{Key Idea}}: Solve for $ {\color{myblue}{\tilde{n} \equiv n\pmod{p_i^{e_i}}}} $ by solving ${\color{myblue}{Q_t = z_t P}}  $ and combine each $ {\color{myblue}{n_i}} $ using Chinese Remainder Theorem.
+  \end{tcolorbox}
+  \vspace{-0.5em}
+  }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \headerbox{General Attack on ECDLP}{name=general_atk,column=3,row=0}{
+  The best general attack is a combination of Pollard's $ {\color{myblue}{\rho}} $ algorithm for factorisation and the Pohlig-Hellman Algorithm. The expected running time of this is 
+  \vspace{0.8em}
+  $$ {\color{myblue}{\boxed{O(\sqrt{p})}}} $$
+  where $ {\color{myblue}{p}} $ is the largest prime divisor of $ {\color{myblue}{N = \text{ord}(P)}} $. 
+  \begin{enumerate}[leftmargin = *]
+    \item[\ding{43}] To resist this attack one should pick an elliptic curve with point $ {\color{myblue}{P}} $ of order $ {\color{myblue}{N}} $ where all the prime divisors of $ {\color{myblue}{N}} $ are large\cite[\S 4.1]{hankerson2006guide}.
+  \end{enumerate}
+  
+  }
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \headerbox{Million Dollar Question(?)}{name=continuous,column=3,below=general_atk, headerColorOne = pastelred}{
+  \vspace{-1.6em}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth, height = 0.25\textwidth]{PNP.jpg}
+    \vspace*{-3mm}
+    \caption*{\footnotesize Complexity Classes Venn Diagram \cite{de2014edge}}
+\end{figure}
+\vspace{-1.5em}
+  \begin{Definition}
+  \begin{definition}
+  \textbf{(Decision version ECDLP)} Given $ {\color{myblue}{(E(\mathbb{F}_p), N, d , Q , P)}} $ where $ {\color{myblue}{E(\mathbb{F}_p)}} $ is an elliptic curve over $ {\color{myblue}{\mathbb{F}_p}} $, $ {\color{myblue}{P \in E(\mathbb{F}_p)}} $ with order $ {\color{myblue}{N}} $ and $ {\color{myblue}{d \leq N}}  $ an integer. Then the decision problem is: 
+$$ {\color{myblue}{\text{Is there an integer } k\leq d : Q = k P \text{?}}} $$
+  \end{definition}
+  \end{Definition}
+  The decision version of ECDLP is known to be in $ \text{NP}\cap \text{co-NP} $. It is not known to be in P as currently there is no deterministic polynomial time algorithm that solves it. \textbf{Therefore if one can show that there does not exist a deterministic polynomial time algorithm that solves ECDLP, this would imply}  
+  $$ {\color{red}{ \text{P} \neq \text{NP}}} $$
+  thus settling one of the most important question in computer science. Further if one can show that it is NP-complete, then this would imply that 
+  $$ \text{NP} = \text{co-NP} $$
+  which also solves another unsolved question in computer science\cite[\S 4.1]{hankerson2006guide}. 
+  }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\headerbox{Conclusions}{name=concl,column=3,below=continuous}{
+ The underlying working principle of ECDLP is based on the assumption that $ \text{P} \neq \text{NP} $. The algorithms covered here involve some probabilistic elements and the fastest known algorithm that can solve ECDLP in polynomial time can only be done on a non-deterministc Turing machine. But all of this may change when the age of quantum computing truly begins. 
+	}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \headerbox{References}{name=references,column=3, below = concl}{
+    \tiny
+    \vspace{-0.4em}
+    \bibliographystyle{unsrtnat}
+    \renewcommand{\section}[2]{\vskip 0.05em}
+    \bibliography{references}
+    \vspace{-0.01em}
+  }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  
+\end{poster}
+
+
+
+\end{document} 
